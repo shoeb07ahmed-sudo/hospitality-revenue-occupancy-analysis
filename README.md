@@ -1,41 +1,35 @@
-# Hospitality Revenue and Occupancy Analysis
+# Hospitality Booking Analysis
 
-An exploratory data analysis project using AtliQ Hotels booking data. The Jupyter notebook cleans and combines booking, hotel, room, and date tables to examine occupancy and revenue patterns across cities, room categories, hotel types, months, and booking platforms.
+A personal Python analytics portfolio project exploring hotel occupancy and realized revenue patterns. The analysis reports data quality checks, occupancy by room class, city and day type, June occupancy by city, and revenue by city, month and booking platform.
 
-> Educational project based on the Codebasics hospitality analysis course project. Dataset and tutorial credit belongs to the original course/project authors. This repository is a personal learning portfolio; review the source terms before redistributing the data.
+## Data access
 
-## Questions explored
+This repository does not redistribute the course notebook or CSV datasets. Obtain the learning data from the [official Codebasics hospitality resource](https://codebasics.io/resources/end-to-end-data-analyst-project), then place the five required CSV files in a local `datasets/` folder:
 
-- What is the average occupancy rate by room category and city?
-- How does occupancy differ between weekdays and weekends?
-- What does June occupancy look like across cities?
-- How does revenue vary by city, month, hotel type, and booking platform?
-- How do ratings and booking capacity relate to the analysis?
+- `dim_date.csv`
+- `dim_hotels.csv`
+- `dim_rooms.csv`
+- `fact_aggregated_bookings.csv`
+- `fact_bookings.csv`
 
-The notebook also demonstrates data exploration, handling invalid guest counts, outlier checks, occupancy percentage calculations, merging tables, appending August data, and visualizing results.
+The August update file is not required by this original analysis script. Codebasics states that unauthorized sharing of its downloaded dataset/material is prohibited; keep those source files local and follow the provider's terms.
 
-## Project structure
+## Run
 
-```text
-.
-├── datasets/                 # CSV input tables used by the notebook
-└── hotels_analysis.ipynb     # Exploratory analysis and charts
-```
-
-## Run the notebook
-
-Use Python 3 with Jupyter Notebook or JupyterLab. Install the libraries used by the notebook:
+Install Python 3 and pandas, then run from the repository root:
 
 ```bash
-python -m pip install pandas numpy matplotlib jupyter
+python -m pip install pandas
+python analysis.py
 ```
 
-Then start Jupyter from the repository root and open `hotels_analysis.ipynb`. The notebook reads its CSV files from the relative `datasets/` directory.
+The script prints each summary and writes CSV results under `outputs/`. Local datasets and generated results are ignored by Git.
 
-## Data
+## Skills demonstrated
 
-The `datasets/` folder contains the date, hotel, and room dimensions; booking and aggregated booking facts; and the August data file used in the notebook. These files are included so the analysis can be reproduced. Please retain the attribution above if you reuse this educational project.
+- Data quality checks and explicit handling of invalid capacity and guest counts
+- Joining fact and dimension tables with relationship validation
+- Occupancy and revenue aggregation across business dimensions
+- Reproducible CSV outputs using pandas
 
-## Portfolio note
-
-This repository preserves the course notebook and its exercises. Before presenting it as a finished resume project, add a short section with your own conclusions and explain what decisions the results could inform. Avoid claiming business impact unless you have independently validated it.
+This is a learning project. Add independently validated business conclusions before using it to describe measured business impact on a resume.
